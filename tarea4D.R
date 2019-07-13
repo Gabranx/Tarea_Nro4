@@ -58,3 +58,8 @@ archivo <- read_html(mipagina)
 tablanodes <- html_nodes(archivo,".verde")
 tabla1 <-html_table(html_nodes(tablanodes,"table")[[1]])
 print(tabla1)
+#pasando la informacion a una data frame
+tablaframe <- as.data.frame(tabla1)
+
+#almacenando la información en CSV
+write.csv(tablaframe, file="supertabla.csv")
