@@ -52,3 +52,9 @@ html_text(nodesDelHTML)
 #Por último se almacena en una variable texto
 
 texto<-html_text(nodesDelHTML)
+#######################################################################
+mipagina <- "tarea4.html"
+archivo <- read_html(mipagina)
+tablanodes <- html_nodes(archivo,".verde")
+tabla1 <-html_table(html_nodes(tablanodes,"table")[[1]])
+print(tabla1)
